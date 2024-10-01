@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <script>
+        // create a function to run my game
+        function StupidGame(){
+            // We are going to narrate what is going on in this function in the console
+            console.log("StupidGame function was called");
+
+            // Role a die
+            var die1= rollDie();
+            console.log("the first die roll is: " + die1);
+
+            // Role a die
+            var die2= rollDie();
+            console.log("the second die roll is: " + die2);
+
+            // Add the dice rolls together
+            var sum= die1 + die2;
+            console.log("the sum is: " + sum);
+
+            // Output the dicerolls to the page
+            document.getElementById("Loser1Result").textContent = "Die 1 is: " + die1;
+            document.getElementById("Loser2Result").textContent = "Die 2 is: " + die2;
+            document.getElementById("sumResult").textContent = "Die 1 is: " + sum;
+
+            // Game Logic
+            if (sum == 7 || sum == 11){
+                // If you generate 7 or 11 you lose
+                document.getElementById("StupidResults").textContent = "Really bro, try harder next time."
+            }
+            else if(die1 == die2 && die1 % 2 == 0){
+                // if the numbers are the same and there is no remainder, you win
+                document.getElementById("StupidResults").textContent = "Congratulations, you have enough brain cells to complete this game."
+            }
+        }   
+
+        // Create a function to generate a die roll - a random number between 1 and 8
+        function rollDie(){
+        // Generate a random number between 1 and 8
+        var die= Math.random() * 8;
+        // return the random number to the code that called this function
+        return Math.ceil(die); // return a whole number
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="heading">Welcome to a lousy game made by a bad programmer.</h1>
+    </header>
+
+    <main>
+        <button onclick="StupidGame();">Click this button to activate time waster.</button>
+        <div id="StupidResults">Really bro, try harder next time.</div>
+        <div id="Loser1Result">You died like a loser.</dive>
+        <div id="Loser2Result">This is why you can't impress women, because you can't do something this simple.</dive>
+        <div id="sumResult">Congratulations, you have enough brain cells to complete this game.</div>
+
+        <div id="Rules">Rules: If you manage to generate the number eight 888,888 times you will not die alone like a loser
+            because if you put 8 on it's side it stands for infinity, and you must get 888,888 because three is the magic number
+            for Illuminati and theres two sets of three which symbolizes you and your partner. So if you want to create eternal magic between you and your true love, then I would highly recommend
+            you stop eating Doritos, put that Mountain Dew down, get off of Twitch and go find her. I promise generating the number
+            eight 888,888 times will work, you can always trust Trollface.
+        </div>
+    </main>
+</body>
+</html>
