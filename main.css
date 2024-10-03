@@ -1,0 +1,34 @@
+/* 
+selector{
+    selector can be an HTML element, it can be a custom style - start with . or it can be an id - start with #
+
+    property1: value;
+    property2: value;
+}
+*/
+
+/* body applies to the whole page */
+body{
+    background-color: black;
+    color: #800000;
+}
+
+/* by default - create a box for the menu */
+nav{
+    height: 600px;
+    width: 200px;
+    float: left;
+    padding: 5px
+    line-height: 30px;
+}
+
+/* add some footer styles */
+footer{
+    text-align: left;
+    margin-right: 200px;
+}
+
+#Devils Hand.jpg{
+    margin-left: 200px;
+    width: 400px;
+}
