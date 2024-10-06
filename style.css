@@ -1,0 +1,47 @@
+/* General page setup */
+body {
+    background-color: #800000; /* Maroon background */
+    color: #ff4f4f; /* White text for readability */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #660000; /* Darker maroon for contrast */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ff6666; /* Light red to stand out */
+    font-size: 36px;
+}
+
+/* Section styles */
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #ff5252; /* Lighter red for headers */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #660000;
+    color: #ff0000;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
