@@ -1,0 +1,99 @@
+<!-- Author: [Hunter Bevers] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>㋡Sketchy Website㋡</title>
+    <style>
+        /* Style for body */
+        body {
+            font-family: Arial, sans-serif; /* Set font style */
+            background-color: darkgoldenrod; /* Interesting background color */
+            color: cyan; /* Powerful text color */
+            text-align: center; /* Center align text */
+            padding: 50px; /* Padding around content */
+        }
+        /* Style for input fields */
+        input[type="text"] {
+            margin: 10px; /* Space around input fields */
+            padding: 10px; /* Padding inside input fields */
+            width: 200px; /* Fixed width for input fields */
+            border: 1px solid #000000; /* Dark border */
+            border-radius: 5px; /* Rounded corners */
+        }
+        /* Style for submit button */
+        input[type="submit"] {
+            padding: 10px 20px; /* Padding for button */
+            background-color: #700000; /* Maroon button */
+            color: rgb(199, 199, 199); /* Off-white text on button */
+            border: magenta; /* Magenta button border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        /* Style for submit button on hover */
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        /* Style for warning and secret message */
+        #warning {
+            color: red; /* Red text for warnings */
+            margin-top: 20px; /* Space above warning */
+        }
+        #secretMessage {
+            display: none; /* Hidden initially */
+            margin-top: 20px; /* Space above secret message */
+            font-weight: bold; /* Bold text */
+        }
+    </style>
+</head>
+<body>
+    <h1>This shits gonna be fun ㋡㋡㋡㋡㋡㋡</h1>
+    <!-- Form for user input -->
+    <form id="userForm">
+        <input type="text" id="firstName" placeholder="Legal ㋡ first ㋡ name" required>
+        <input type="text" id="lastName" placeholder="Legal ㋡ last ㋡ name" required>
+        <input type="text" id="zipCode" placeholder="Zip Code (hahaha)" required>
+        <input type="submit" value="Click me baby!">
+    </form>
+    
+    <p id="warning"></p> <!-- Area for warning messages -->
+    <p id="secretMessage">"Hey, let me ask you something. Do you like computer viruses, well...hahahahahahahahahaha!"</p> <!-- Secret message, hidden initially -->
+    <p id="secretMessage">"Get prepared to be a meme on the internet now, hehehehe!"</p> <!-- Secret message, hidden initially -->
+    <p id="secretMessage">"You know what they say, sharing is caring, so please share your credit card info."</p> <!-- Secret message, hidden initially -->
+
+    <script>
+        // Function to validate user input
+        document.getElementById("userForm").onsubmit = function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            // Get values from input fields
+            const firstName = document.getElementById("firstName").value.trim(); // Get first name
+            const lastName = document.getElementById("lastName").value.trim(); // Get last name
+            const zipCode = document.getElementById("zipCode").value.trim(); // Get zip code
+
+            // Combine first and last name into one variable
+            const fullName = firstName + " " + lastName; 
+
+            // Check if full name exceeds 20 characters
+            if (fullName.length > 20) {
+                document.getElementById("warning").textContent = "Name cannot exceed 20 characters."; // Show warning
+                document.getElementById("secretMessage").style.display = "none"; // Hide secret message
+                return; // Stop execution
+            }
+
+            // Check if zip code is valid (5 digits)
+            const zipCodePattern = /^\d{5}$/; // Regex for 5 digit zip code
+            if (!zipCodePattern.test(zipCode)) {
+                document.getElementById("warning").textContent = "Zip code must be 5 digits."; // Show warning
+                document.getElementById("secretMessage").style.display = "none"; // Hide secret message
+                return; // Stop execution
+            }
+
+            // If inputs are valid, show the secret message
+            document.getElementById("warning").textContent = ""; // Clear warning
+            document.getElementById("secretMessage").style.display = "block"; // Show secret message
+        };
+    </script>
+</body>
+</html>
