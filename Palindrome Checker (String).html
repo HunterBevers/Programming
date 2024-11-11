@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <script>
+        // Create a function to test if a word is a palindrome
+        function checkPalindrome(wordToTest) {
+            // Remove all non-alphanumeric characters (including spaces) and convert to lowercase
+            var cleanedWord = wordToTest.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+            // Reverse the cleaned word
+            var reversedWord = cleanedWord.split("").reverse().join("");
+
+            // If the cleaned & reversed words are the same, return true; otherwise, false
+            return cleanedWord == reversedWord;
+        }
+
+        console.log("Reviver=" + checkPalindrome("Reviver"));
+        console.log("Blue=" + checkPalindrome("Blue"));
+        console.log("A man a plan a canal Panama=" + checkPalindrome("A man a plan a canal Panama"));
+
+        // bContinue will track if the user wants to keep entering words
+        var bContinue = true;
+
+        // Loop to keep running the code for as long as the user wants
+        do {
+            // Get a word from the user
+            var userInput = prompt("Enter a word to test if it is a palindrome");
+
+            // Test the variable that the user entered
+            var isPalindrome = checkPalindrome(userInput);
+
+            if (isPalindrome) {
+                alert(userInput + " is a palindrome!");
+            } else { // If not a palindrome
+                alert(userInput + " is NOT a palindrome!");
+            }
+
+            // Ask the user if they want to keep going
+            var answer = prompt("Do you want to continue? (y/n)");
+
+            // Test to see if they entered 'n'
+            if (answer.toLowerCase() == "n") {
+                bContinue = false;
+            }
+
+        } while (bContinue);
+    </script>
+</body>
+</html>
