@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Stress</title>
+    <style>
+        body{
+            background-image: url(Pinky\ Pie.jpg);
+            background-size: cover
+        }
+
+        h1{
+            color: pink;
+            text-shadow: 2px 2px 0px black, -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 800%;
+        }
+
+        h2{
+            color: pink;
+            text-shadow: 2px 2px 0px black, -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 200%;
+        }
+
+        button{
+            padding: 20px 40px;
+            background-color: crimson;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>"Behold the Anti-Vexation Alcove"</h1>
+    <h2>"She was the epitome of beauty, a radiant glow that turned every gaze into a moment of pure admiration and longing."</h2>
+
+    <audio id="myAudio">
+        <source src="All Night Long.mp3" type="audio/mp3">
+    </audio>
+
+    <button onclick="playAudio()">Play Audio</button>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
